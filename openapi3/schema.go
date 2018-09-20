@@ -605,6 +605,8 @@ func (schema *Schema) visitJSON(value interface{}, fast bool) (err error) {
 		return schema.visitJSONNull(fast)
 	case bool:
 		return schema.visitJSONBoolean(value, fast)
+	case int:
+		return schema.visitJSONNumber(float64(value), fast)
 	case float64:
 		return schema.visitJSONNumber(value, fast)
 	case string:
