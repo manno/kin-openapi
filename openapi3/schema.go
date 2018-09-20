@@ -771,7 +771,7 @@ func (schema *Schema) visitJSONNumber(value float64, fast bool) (err error) {
 				Reason:      "Value must be an integer",
 			}
 		}
-	} else if schemaType != "" && schemaType != "number" {
+	} else if schemaType != "" && schemaType != "number" && schemaType != "string" {
 		return schema.expectedType("number, integer", fast)
 	}
 
